@@ -1,0 +1,46 @@
+import parcelas.*
+import example.*
+
+
+describe "parceloides"{
+	
+	const parcelita = new Parcela(ancho = 20,largo = 1, horasAlSol=8)
+	const parcelitaE = new ParcelaEcologica(ancho = 20,largo = 1, horasAlSol=8)
+	const soja1 = new Soja(anioObtencion = 2009, altura = 1)
+	const soja2 = new Soja(anioObtencion = 2009, altura = 1.5)
+	const soja3 = new Soja(anioObtencion = 2009, altura = 1.4)
+	
+	
+	
+	
+test "plantitas sin complicaciones"{
+	 parcelita.agregarPlanta(soja1)
+	 parcelita.agregarPlanta(soja2)
+	 parcelita.agregarPlanta(soja3)
+	 assert.that(parcelita.tieneComplicaciones())
+	
+	}
+	
+test "tamaño de superficie"{
+	
+	 assert.equals(20,parcelita.superficie())
+}	
+
+test "cantidad maxima de plantas"{
+	
+	assert.equals(4,parcelita.cantidadMaxima())
+}
+	
+test "test de la parcelita" {
+	
+    parcelita.cantidadMaxima()
+	assert.that(parcelita.superaElLimite())
+   }
+   
+test "test de eco parcelita"{
+	
+	assert.notThat(parcelitaE.esIdeal(soja2))
+	
+}   
+
+}

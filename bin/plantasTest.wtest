@@ -1,0 +1,31 @@
+import example.*
+
+describe"test de plantas"{
+		
+	const mentaA = new Menta(anioObtencion = 2000, altura = 1)
+	const sojaA = new Soja(anioObtencion = 2009, altura = 0.6)
+	const quinoaA = new Quinoa(anioObtencion = 2010, altura = 1, horasDeSol= 12)
+	
+test "menta wenta" {
+    
+    mentaA.horasAlSol()
+	assert.equals(3,mentaA.espacioOcupa())
+	assert.that(mentaA.daSemillas())
+	
+  }
+test "sojita bonita"{
+	
+	sojaA.horasAlSol()
+	assert.equals(0.3,sojaA.espacioOcupa())
+	assert.notThat(sojaA.daSemillas())
+	
+}  
+test "quinoita bobita"{
+	
+	quinoaA.horasAlSol()
+	assert.equals(0.5,quinoaA.espacioOcupa())
+	assert.that(quinoaA.daSemillas())
+	
+}
+  
+}
